@@ -1,22 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import {createStore} from 'redux'
 
-class App extends Component {
-  render() {
+class App extends Component{
+  render () {
+    const address = 'sky hold'
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to helloworld</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+      <h2>
+        <p>welcome to {address}</p>
+        <Makasa name="Makasa"/>
+        <Fenlire name="Fenlire"/>
+      </h2>)
   }
 }
 
-export default App;
+class Makasa extends Component{
+  render () {
+    const name = this.props.name
+    const rank = 'assassin'
+    return <p>our leader {rank} --{name}!</p>
+  }
+}
+
+class Fenlire extends Component{
+  render () {
+    const name = this.props.name
+    const rank = 'fs'
+    return <p>{rank} --{name}</p>
+  }
+}
+
+export default App
