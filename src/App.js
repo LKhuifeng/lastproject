@@ -1,26 +1,51 @@
 import React, { Component } from 'react'
-import { addPower,removePower } from './index.redux'
+import { connect } from 'react-redux'
+import { addPower,removePower,addPowerAsync } from './index.redux'
 
-class App extends React.Component{
-  constructor(props){
-    super(props)
-  }
+//使用react-redux的方法
+//使用redux是为了将操作函数抽离出组件
+//所有数据的运作都在index.redux里进行
+// const mapStateProps = (state) => {
+//   return { num:state }
+// }
+//将这些数据放到this处
+// const actionCreators = { addPower,removePower,addPowerAsync }
+//链接
+// App = connect(mapStateProps, actionCreators)(App)
+
+//使用transform-decorators-legacy后可以用@写法来链接
+@connect(
+  // 第一个参数:你需要的state放进props里
+  state=>({num:state}),
+  // 第二个参数:你需要的方法放进props里，并且自动dispatch
+  { addPower,removePower,addPowerAsync }
+)
+
+class App extends Component{
+  // constructor(props){
+  //   super(props)
+  // }
   render(){
-    const store = this.props.store
+    // const store = this.props.store
     //获取仓库数据
-    const num = store.getState()
+    // const num = store.getState()
+    // const num = this.props.num
+    // const addPower = this.props.addPower
+    // const removePower = this.props.removePower
+    // const addPowerAsync = this.props.addPowerAsync
     return (
       <div>
-        <h1>have power {num} point</h1>
+        <h1>have power {this.props.num} point</h1>
         <p>get power</p>
-        <button onClick={()=>store.dispatch(addPower())}>up</button>
+        <button onClick={this.props.addPower}>up</button>
         <p>lost power</p>
-        <button onClick={()=>store.dispatch(removePower())}>down</button>
+        <button onClick={this.props.removePower}>down</button>
+        <p>add power after 2s</p>
+        <button onClick={this.props.addPowerAsync}>up</button>
       </div>
     )
   }
 }
-
 export default App
 
 // import React, { Component } from 'react'

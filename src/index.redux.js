@@ -25,6 +25,13 @@ export function removePower(){
     return {type:REMOVE_POWER}
 }
 
+export function addPowerAsync(){
+    return dispatch=>{
+        setTimeout(()=>{
+            dispatch(addPower())
+        },2000)
+    }
+}
 
 // import { createStore } from 'redux'
 // //创建 store
