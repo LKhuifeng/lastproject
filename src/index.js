@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 //路由
-import { BrowserRouter, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Route, Link, Switch, Redirect } from 'react-router-dom'
 //redux 单独分离出来，可以跟任何前端框架使用
 import { createStore, applyMiddleware } from 'redux'
 //异步redux
@@ -10,48 +10,34 @@ import thunk from 'redux-thunk'
 //使用后可以舍弃subscribe，store不断传递的写法
 import { Provider } from 'react-redux'
 import App from './App';
-import { counter } from './index.redux'
+import Auth from './Auth'
+import Dashboard from './Dashboard'
+// import { counter } from './index.redux'
+import reducers from './reducer'
 
 //建立仓库
-const store = createStore(counter, applyMiddleware(thunk))
+const store = createStore(reducers, applyMiddleware(thunk))
 
-function second(){
-    return <h1>second</h1>
-}
-function third(){
-    return <h1>third</h1>
-}
+console.log(store.getState())
 
-class Test extends React.Component{
-    constructor(props){
-        super(props)
-    }
-    render(){
-        console.log(this.props)
-        return <h1>组件测试 {this.props.match.params.location}</h1>
-    }
-}
+// class Test extends React.Component{
+//     constructor(props){
+//         super(props)
+//     }
+//     render(){
+//         console.log(this.props)
+//         return <h1>组件测试 {this.props.match.params.location}</h1>
+//     }
+// }
 
 ReactDOM.render(
     (<Provider store={store}>
         <BrowserRouter>
-            <div>
-                <ul>
-                    <li>
-                        <Link to='/'>first</Link>
-                    </li>
-                    <li>
-                        <Link to='/second'>second</Link>
-                    </li>
-                    <li>
-                        <Link to='/third'>third</Link>
-                    </li>
-                </ul>
-                <Route path='/' exact component={App}></Route>
-                <Route path='/:location' component={Test}></Route>
-                <Route path='/second' component={second}></Route>
-                <Route path='/third' component={third}></Route>
-            </div>
+            <Switch>
+                <Route path='/login' exact component={Auth}></Route>
+                <Route path='/dashboard' component={Dashboard}></Route>
+                <Redirect to='/dashboard'></Redirect>
+            </Switch>
         </BrowserRouter>
     </Provider>),
     document.getElementById('root')

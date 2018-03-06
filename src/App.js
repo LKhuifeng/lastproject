@@ -16,7 +16,8 @@ import { addPower,removePower,addPowerAsync } from './index.redux'
 //使用transform-decorators-legacy后可以用@写法来链接
 @connect(
   // 第一个参数:你需要的state放进props里
-  state=>({num:state}),
+  // 不加counter会报错
+  state=>({num:state.counter}),
   // 第二个参数:你需要的方法放进props里，并且自动dispatch
   { addPower,removePower,addPowerAsync }
 )
