@@ -14,6 +14,7 @@ import Auth from './Auth'
 import Dashboard from './Dashboard'
 // import { counter } from './index.redux'
 import reducers from './reducer'
+import './config'
 
 //建立仓库
 const store = createStore(reducers, applyMiddleware(thunk))
