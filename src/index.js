@@ -4,11 +4,15 @@ import ReactDOM from 'react-dom'
 import { createStore, applyMiddleware } from 'redux'
 //路由
 import { BrowserRouter, Route, Link, Switch, Redirect } from 'react-router-dom'
+//引入组件
+import Login from './container/login/login'
+import Register from './container/register/register'
 //异步redux
 import thunk from 'redux-thunk'
 //react专门链接reudx的工具
 //使用后可以舍弃subscribe，store不断传递的写法
 import { Provider } from 'react-redux'
+//合并redux
 import reducers from './reducer'
 //拦截请求
 import './config'
@@ -19,6 +23,10 @@ const store = createStore(reducers, applyMiddleware(thunk))
 ReactDOM.render(
     (<Provider store={store}>
         <BrowserRouter>
+            <div>
+                <Route path='/login' component={Login}></Route>
+                <Route path='/register' component={Register}></Route>
+            </div>
         </BrowserRouter>
     </Provider>),
     document.getElementById('root')
