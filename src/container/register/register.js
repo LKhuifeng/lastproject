@@ -26,6 +26,8 @@ export class Register extends Component {
                         HR
                     </RadioItem>
                 </List>
+                <WhiteSpace></WhiteSpace>
+                <Button type='primary'>注册</Button>
             </div>
         )
     }
