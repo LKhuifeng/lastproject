@@ -17,6 +17,7 @@ import { Provider } from 'react-redux'
 import reducers from './reducer'
 //拦截请求
 import './config'
+import './index.css'
 
 //建立仓库
 const store = createStore(reducers, applyMiddleware(thunk))
