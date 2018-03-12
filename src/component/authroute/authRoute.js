@@ -33,11 +33,7 @@ export class AuthRoute extends Component {
     }
 
     render() {
-        return (
-            <div>
-                test
-            </div>
-        )
+        return null
     }
 }
 
