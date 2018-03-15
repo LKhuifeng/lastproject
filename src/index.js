@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Link, Switch, Redirect } from 'react-router-dom'
 import Login from './container/login/login'
 import Register from './container/register/register'
 import AuthRoute from './component/authroute/authRoute'
+import BossInfo from './container/bossinfo/bossinfo'
 //异步redux
 import thunk from 'redux-thunk'
 //react专门链接reudx的工具
@@ -31,6 +32,7 @@ ReactDOM.render(
         <BrowserRouter>
             <div>
                 <AuthRoute></AuthRoute>
+                <Route path='/bossinfo' component={BossInfo}></Route>
                 <Route path='/boss' component={Boss}></Route>
                 <Route path='/login' component={Login}></Route>
                 <Route path='/register' component={Register}></Route>
