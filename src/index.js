@@ -9,6 +9,7 @@ import Login from './container/login/login'
 import Register from './container/register/register'
 import AuthRoute from './component/authroute/authRoute'
 import BossInfo from './container/bossinfo/bossinfo'
+import GeniusInfo from './container/geniusinfo/geniusinfo'
 //异步redux
 import thunk from 'redux-thunk'
 //react专门链接reudx的工具
@@ -31,11 +32,16 @@ ReactDOM.render(
     (<Provider store={store}>
         <BrowserRouter>
             <div>
+                {/* 检测路由 */}
                 <AuthRoute></AuthRoute>
-                <Route path='/bossinfo' component={BossInfo}></Route>
-                <Route path='/boss' component={Boss}></Route>
-                <Route path='/login' component={Login}></Route>
-                <Route path='/register' component={Register}></Route>
+                {/* Switch只需要找到当前路由就不会往下渲染其他路由 */}
+                <Switch>
+                    <Route path='/bossinfo' component={BossInfo}></Route>
+                    <Route path='/login' component={Login}></Route>
+                    <Route path='/register' component={Register}></Route>
+                    <Route path='/geniusinfo' component={GeniusInfo}></Route>
+                    <Route path='/boss' component={Boss}></Route>
+                </Switch>
             </div>
         </BrowserRouter>
     </Provider>),

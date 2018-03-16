@@ -14,6 +14,21 @@ Router.get('/list',function(req, res){
     })
 })
 
+Router.post('/update',function(req,res){
+    const userid = req.cookies.userid
+    if(!userid){
+        return json.dumps({code:1})
+    }
+    const body = req.body
+    //查找并且更新
+    User.findByIdAndUpdate(userid,body,function(err,doc){
+        const data = Object.assign({},{
+            user:doc.user,
+            type:doc.type
+        },body)
+        return res.json({code:0,data})
+    })
+})
 //对密码进行解密查找
 //{'pwd:0'} 保证不会将密码返回，哪怕是已经加密的
 //也可以用这种方法屏蔽别的不想显示的数据
