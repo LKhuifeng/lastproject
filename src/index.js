@@ -10,6 +10,7 @@ import Register from './container/register/register'
 import AuthRoute from './component/authroute/authRoute'
 import BossInfo from './container/bossinfo/bossinfo'
 import GeniusInfo from './container/geniusinfo/geniusinfo'
+import Dashboard from './component/dashboard/dashboard'
 //异步redux
 import thunk from 'redux-thunk'
 //react专门链接reudx的工具
@@ -24,10 +25,7 @@ import './index.css'
 //建立仓库
 const store = createStore(reducers, applyMiddleware(thunk))
 
-function Boss(){
-    return <h2>boss</h2>
-}
-
+//boss genius me msg 4个页面
 ReactDOM.render(
     (<Provider store={store}>
         <BrowserRouter>
@@ -40,7 +38,8 @@ ReactDOM.render(
                     <Route path='/login' component={Login}></Route>
                     <Route path='/register' component={Register}></Route>
                     <Route path='/geniusinfo' component={GeniusInfo}></Route>
-                    <Route path='/boss' component={Boss}></Route>
+                    {/* <Route path='/boss' component={Boss}></Route> */}
+                    <Route component={Dashboard}></Route>
                 </Switch>
             </div>
         </BrowserRouter>
