@@ -4,6 +4,7 @@ import {NavBar} from 'antd-mobile'
 import {Switch,Route} from 'react-router-dom'
 import NavLinkBar from '../navlink/navlink'
 import Boss from '../boss/boss'
+import Genius from '../genius/genius'
 
 // function Boss(){
 //     return <h2>Boss首页</h2>
@@ -37,11 +38,11 @@ class Dashboard extends React.Component{
                 hide:user.type=='code'
             },
             {
-                path:'/code',
+                path:'/genius',
                 text:'HR',
                 icon:'job',
                 title:'HR List',
-                component:code,
+                component:Genius,
                 hide:user.type=='boss'
             },
             {

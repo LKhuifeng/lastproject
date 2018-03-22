@@ -18,7 +18,8 @@ const models = {
         'title':{'type':String},
         //hr
         'title':{'type':String},
-        'money':{'type':String}
+        'money':{'type':String},
+        'company':{'type':String}
     },
     chat:{
 
