@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { login } from '../../redux/user.redux'
 
+//connect 是高阶组件
 @connect(
     state=>state.user,
     {login}
@@ -34,7 +35,7 @@ export class Login extends Component {
     render() {
         return (
             <div>
-                {this.props.redirectTo?<Redirect to={this.props.redirectTo}/>:null}
+                {(this.props.redirectTo&&this.props.redirectTo!='/login')?<Redirect to={this.props.redirectTo}/>:null}
                 <Logo></Logo>
                 <WingBlank>
                     <List>

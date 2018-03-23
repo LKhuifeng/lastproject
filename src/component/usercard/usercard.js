@@ -4,7 +4,7 @@ import {Card, WhiteSpace, WingBlank} from 'antd-mobile'
 
 class UserCard extends React.Component{
     static propTypes = {
-        userlis: PropTypes.array.isRequired
+        userlist: PropTypes.array.isRequired
     }
     render(){
         const Header = Card.Header
@@ -14,7 +14,7 @@ class UserCard extends React.Component{
             {console.log(this.props)}
             {this.props.userlist.map(v=>(
                 v.avatar?(
-                <div>
+                <div key={v._id}>
                     <WhiteSpace></WhiteSpace>
                     <Card key={v._id}>
                         <Header

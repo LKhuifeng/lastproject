@@ -4,6 +4,7 @@ import {getRedirectPath} from '../util'
 // const REGISTER_SUCCESS = 'REGISTER_SUCCESS'
 // const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 const AUTH_SUCCESS = 'AUTH_SUCCESS'
+const LOGOUT = 'LOGOUT'
 const ERROR_MSG = 'ERROR_MSG'
 const LOAD_DATA = ''
 const url = ""
@@ -27,6 +28,9 @@ export function user(state=initState, action){
             return {...state,...action.payload}
         case ERROR_MSG:
             return {...state,isAuth:false,msg:action.msg}
+        //将初始数据传递过去
+        case LOGOUT:
+            return {...initState,redirectTo:'login'}
         default:
             return state
     }
@@ -51,6 +55,11 @@ function errorMsg (msg) {
 //获取用户信息
 export function loadData(userinfo){
     return { type:LOAD_DATA, payload:userinfo}
+}
+
+//退出登录时清除redux信息
+export function logoutSubmit(){
+    return { type:LOGOUT }
 }
 
 export function update(data){
