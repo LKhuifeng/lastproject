@@ -4,33 +4,27 @@ import { List, InputItem, WingBlank, WhiteSpace ,Button } from 'antd-mobile'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { login } from '../../redux/user.redux'
+//应用handleChange
+import myform from '../../component/my-form/my-form'
 
-//connect 是高阶组件
+//connect、myform 是高阶组件
 @connect(
     state=>state.user,
     {login}
 )
-
+@myform
 export class Login extends Component {
     constructor (props) {
         super(props)
-        this.state = {
-            user: '',
-            pwd: ''
-        }
         this.register = this.register.bind(this)
         this.handleLogin = this.handleLogin.bind(this)
     }
     register(){
         this.props.history.push('/register')
     }
-    handleChange(key,val){
-        this.setState({
-            [key]:val
-        })
-    }
     handleLogin(){
-        this.props.login(this.state)
+        //由于高阶组件引入所以添加props
+        this.props.login(this.props.state)
     }
     render() {
         return (
@@ -41,10 +35,10 @@ export class Login extends Component {
                     <List>
                         {this.props.msg?<p className='error-msg'>{this.props.msg}</p>:null}
                         <InputItem
-                            onChange={v=>this.handleChange('user',v)}
+                            onChange={v=>this.props.handleChange('user',v)}
                         >用户</InputItem>
                         <InputItem
-                            onChange={v=>this.handleChange('pwd',v)}
+                            onChange={v=>this.props.handleChange('pwd',v)}
                             type='password'
                         >密码</InputItem>
                     </List>
