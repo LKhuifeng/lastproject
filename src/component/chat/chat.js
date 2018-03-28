@@ -18,8 +18,7 @@ class Chat extends React.Component{
     }
 
     componentDidMount(){
-        this.props.getMsgList()
-        this.props.recvMsg()
+        
         //全局socket,使得别人的信息能够传递过来
         // socket.on('recvmsg',(data)=>{
         //     this.setState({
