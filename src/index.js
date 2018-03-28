@@ -11,6 +11,7 @@ import AuthRoute from './component/authroute/authRoute'
 import BossInfo from './container/bossinfo/bossinfo'
 import GeniusInfo from './container/geniusinfo/geniusinfo'
 import Dashboard from './component/dashboard/dashboard'
+import Chat from './component/chat/chat'
 //异步redux
 import thunk from 'redux-thunk'
 //react专门链接reudx的工具
@@ -37,6 +38,7 @@ ReactDOM.render(
                     <Route path='/bossinfo' component={BossInfo}></Route>
                     <Route path='/login' component={Login}></Route>
                     <Route path='/register' component={Register}></Route>
+                    <Route path='/chat/:user' component={Chat}></Route>
                     <Route path='/geniusinfo' component={GeniusInfo}></Route>
                     {/* <Route path='/boss' component={Boss}></Route> */}
                     <Route component={Dashboard}></Route>
