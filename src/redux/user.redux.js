@@ -48,6 +48,7 @@ function authSuccess(obj){
 //     return { type:LOGIN_SUCCESS ,payload:data}
 // }
 
+//报错
 function errorMsg (msg) {
     return { type:ERROR_MSG, msg:msg}
 }
@@ -61,7 +62,7 @@ export function loadData(userinfo){
 export function logoutSubmit(){
     return { type:LOGOUT }
 }
-
+//更新信息
 export function update(data){
     return dispatch=>{
         axios.post('/user/update',data)
@@ -74,7 +75,7 @@ export function update(data){
             })
     }
 }
-
+//登陆
 export function login({user,pwd}){
     if(!user||!pwd) {
         return errorMsg('用户密码必须输入')
@@ -90,7 +91,7 @@ export function login({user,pwd}){
         })
     }
 }
-
+//注册
 export function register({user,pwd,repeatpwd,type}){
     if(!user||!pwd||!type) {
         return errorMsg('用户名、密码必须输入')

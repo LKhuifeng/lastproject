@@ -6,6 +6,7 @@ import NavLinkBar from '../navlink/navlink'
 import Boss from '../boss/boss'
 import Genius from '../genius/genius'
 import User from '../user/user'
+import Msg from '../msg/msg'
 import {getMsgList,sendMsg,recvMsg} from '../../redux/chat.redux'
 
 // function Boss(){
@@ -14,9 +15,9 @@ import {getMsgList,sendMsg,recvMsg} from '../../redux/chat.redux'
 function code(){
     return <h2>Coder首页</h2>
 }
-function Msg(){
-    return <h2>消息页面</h2>
-}
+// function Msg(){
+//     return <h2>消息页面</h2>
+// }
 // function User(){
 //     return <h2>个人中心</h2>
 // }

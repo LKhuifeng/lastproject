@@ -28,6 +28,7 @@ export function chat(state=initState, action){
             return state
     }
 }
+
 function msgList(msgs, users, userid){
     return {type:MSG_LIST,payload:{msgs,users,userid}}
 }
@@ -44,12 +45,13 @@ export function recvMsg(){
         })
     }
 }
-
+//发送信息
 export function sendMsg({from,to,msg}){
     return dispatch=>{
         socket.emit('sendmsg',{from,to,msg})
     }
 }
+//获取信息列表
 export function getMsgList(){
     return (dispatch, getState)=>{
         axios.get('/user/getmsglist')

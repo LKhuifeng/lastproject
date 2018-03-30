@@ -62,7 +62,7 @@ Router.post('/login',function(req,res){
         return res.json({code:0,data:doc})
     })
 })
-
+//注册
 Router.post('/register',function(req,res){
     console.log(req.body)
     const {user, pwd ,type} = req.body
@@ -71,12 +71,15 @@ Router.post('/register',function(req,res){
         if (doc) {
             return res.json({code:1,msg:'用户名重复'})
         }
+        //md5加密
         const userModel = new User({user,type,pwd:md5Pwd(pwd)})
+        //保存到数据库
         userModel.save(function(e,d){
             if(e){
                 return res.json({code:1,msg:'后端出现错误'})
             }
             const {user,type,_id} = d
+            //保存到cookie
             res.cookie('userid',_id)
             return res.json({code:0,data:{user,type,_id}})
         })

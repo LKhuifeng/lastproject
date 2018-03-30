@@ -36,7 +36,7 @@
     margin-top: 0
 }
 #chat-page .am-list:last-child{
-    margin-bottom: 44px;
+    margin-bottom: 0;
 }
 .stick-footer{
     z-index: 10;

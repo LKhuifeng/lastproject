@@ -5,7 +5,7 @@ mongoose.connect(DB_URL)
 mongoose.connection.on('connected',function(){
     console.log('mogo connect success')
 })
-
+//数据库模型
 const models = {
     user:{
         'user':{'type':String, 'require':true},
@@ -21,6 +21,7 @@ const models = {
         'money':{'type':String},
         'company':{'type':String}
     },
+    //聊天数据
     chat:{
         'chatid':{'type':String,'require':true},
         'from':{'type':String,'require':true},
