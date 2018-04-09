@@ -1,3 +1,59 @@
+.login-page input,.register-page input {
+    background-color: transparent !important;
+}
+.login-page input:-webkit-autofill,.register-page input:-webkit-autofill  {
+    -webkit-transition: background-color 10000s cubic-bezier(1, -100, 1, -100) 0s;
+}
+
+.login-page{
+    width: 100%;
+    padding-top: 90%;
+    padding-bottom: 60%;
+    background: url(/static/media/bg.a0330b1f.jpg) no-repeat;
+    background-size: cover;
+}
+.register-page{
+    width: 100%;
+    padding: 50% 20px;
+    box-sizing: border-box;
+    background: url(/static/media/bg.a0330b1f.jpg) no-repeat;
+    background-size: cover;
+}
+.login-page .am-list-body,.register-page .am-list-body{
+    border-radius: 10px;
+    overflow: hidden;
+    background: transparent;
+}
+.login-page .am-list-item,.register-page .am-list-item{
+    background: transparent;
+    border: 1px #fff solid;
+    border-top-left-radius: 22px;
+    border-top-right-radius: 22px;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+}
+.login-page .am-list-item .am-input-control input,.register-page .am-list-item .am-input-control input{
+    color: #fff;
+    text-align: center;
+}
+.register-page .am-list-item .am-input-control input{
+    text-align: start;
+}
+.login-page .am-button,.register-page .am-button{
+    border-top-left-radius: 22px;
+    border-top-right-radius: 22px;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+    background: #47c584;
+}
+.login-page .am-button:last-child{
+    background: #38babd;
+}
+.register-page .am-list-item .am-input-label,.register-page .am-list-item .am-list-line .am-list-content{
+    color: #fff;
+}
+
+
 .error-msg{
     color: #f50;
     padding-left: 10px;

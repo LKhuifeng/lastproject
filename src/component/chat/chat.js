@@ -5,6 +5,7 @@ import {connect} from 'react-redux'
 import {getMsgList,sendMsg,recvMsg} from '../../redux/chat.redux'
 import {getChatId} from '../../util'
 //服务器和客户端的端口不同，是跨域的，需要我们手动链接
+//放到服务器中不是localhost，而是服务器ip
 const socket = io('ws://localhost:9093')
 
 @connect(
