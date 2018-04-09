@@ -44,6 +44,13 @@ export class Login extends Component {
                         ></InputItem>
                     </List>
                     <WhiteSpace></WhiteSpace>
+                    <p className="tips">forgot your password?</p>
+                    <div className="icon-box">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </div>
+                    <WhiteSpace></WhiteSpace>
                     <Button onClick={this.handleLogin} type='primary'>登录</Button>
                     <WhiteSpace></WhiteSpace>
                     <Button onClick={this.register} type='primary'>注册</Button>

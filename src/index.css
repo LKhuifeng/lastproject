@@ -39,6 +39,39 @@
 .register-page .am-list-item .am-input-control input{
     text-align: start;
 }
+
+.login-page .tips{
+    color: #fff;
+    text-align: center;
+}
+.login-page .icon-box{
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+.login-page .icon-box i{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px 10px;
+}
+.login-page .icon-box i:nth-child(1){
+    background: url(./component/img/icon-GitHub.png) no-repeat;
+    background-size: 100% 100%;
+}
+.login-page .icon-box i:nth-child(2){
+    background: url(./component/img/icon-facebook.png) no-repeat;
+    background-size: 100% 100%;
+}
+.login-page .icon-box i:nth-child(3){
+    background: url(./component/img/icon-qq.png) no-repeat;
+    background-size: 100% 100%;
+}
+
 .login-page .am-button,.register-page .am-button{
     border-top-left-radius: 22px;
     border-top-right-radius: 22px;
