@@ -1,22 +1,22 @@
+/*login and resigter*/
 .login-page input,.register-page input {
     background-color: transparent !important;
 }
 .login-page input:-webkit-autofill,.register-page input:-webkit-autofill  {
     -webkit-transition: background-color 10000s cubic-bezier(1, -100, 1, -100) 0s;
 }
-
 .login-page{
     width: 100%;
-    padding-top: 90%;
+    padding-top: 50%;
     padding-bottom: 60%;
-    background: url(/static/media/bg.a0330b1f.jpg) no-repeat;
+    background: url(./component/img/bg.jpg) no-repeat;
     background-size: cover;
 }
 .register-page{
     width: 100%;
     padding: 50% 20px;
     box-sizing: border-box;
-    background: url(/static/media/bg.a0330b1f.jpg) no-repeat;
+    background: url(./component/img/bg.jpg) no-repeat;
     background-size: cover;
 }
 .login-page .am-list-body,.register-page .am-list-body{
@@ -71,7 +71,6 @@
     background: url(./component/img/icon-qq.png) no-repeat;
     background-size: 100% 100%;
 }
-
 .login-page .am-button,.register-page .am-button{
     border-top-left-radius: 22px;
     border-top-right-radius: 22px;
@@ -85,7 +84,16 @@
 .register-page .am-list-item .am-input-label,.register-page .am-list-item .am-list-line .am-list-content{
     color: #fff;
 }
-
+/*dashbox*/
+.fixd-header.am-navbar.am-navbar-dard{
+    position: fixed;
+    z-index: 1;
+}
+.dashbox{
+    position: relative;
+    padding-bottom: 100px;
+    z-index: 0;
+}
 
 .error-msg{
     color: #f50;
@@ -132,4 +140,23 @@
     position: absolute;
     bottom: 0;
     width: 100%;
+}
+.chatbox{
+    max-height: 478px;
+    overflow-x: scroll;
+}
+@media (min-width: 360px){
+    .chatbox{
+        max-height: 550px;
+    }
+}
+@media (min-width: 375px){
+    .chatbox{
+        max-height: 585px;
+    }
+}
+@media (min-width: 410px){
+    .chatbox{
+        max-height: 655px;
+    }
 }
