@@ -125,6 +125,7 @@
 #chat-page .chat-me .am-list-content{
     padding-right: 15px;
     text-align: right;
+    white-space: normal;
 }
 #chat-page .am-grid-icon{
     display: none;
@@ -157,6 +158,6 @@
 }
 @media (min-width: 410px){
     .chatbox{
-        max-height: 655px;
+        max-height: 620px;
     }
 }
