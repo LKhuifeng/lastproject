@@ -2,6 +2,8 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {List,Badge} from 'antd-mobile'
 
+import values from 'object.values'
+
 @connect(
     state=>state
 )
@@ -24,7 +26,11 @@ class Msg extends React.Component{
             msgGroup[v.chatid] = msgGroup[v.chatid] || []
             msgGroup[v.chatid].push(v)
         })
-
+        if(!Object.values){
+            values.shim()
+        }
+        console.log(values)
+        //app不兼容Object.values
         const chatList = Object.values(msgGroup).sort((a,b)=>{
             const a_last = this.getLast(a).create_time
             const b_last = this.getLast(b).create_time

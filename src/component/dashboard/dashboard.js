@@ -43,7 +43,7 @@ class Dashboard extends React.Component{
                 path:'/boss',
                 text:'code',
                 icon:'boss',
-                title:'Coder List',
+                title:'极客列表',
                 component:Boss,
                 hide:user.type=='code'
             },
@@ -51,7 +51,7 @@ class Dashboard extends React.Component{
                 path:'/genius',
                 text:'HR',
                 icon:'job',
-                title:'HR List',
+                title:'任务列表',
                 component:Genius,
                 hide:user.type=='boss'
             },
@@ -59,14 +59,14 @@ class Dashboard extends React.Component{
                 path:'/msg',
                 text:'消息',
                 icon:'msg',
-                title:'News List',
+                title:'最新消息',
                 component:Msg
             },
             {
                 path:'/me',
                 text:'我',
                 icon:'user',
-                title:'Personal',
+                title:'个人中心',
                 component:User
             }
         ]
